@@ -73,9 +73,24 @@ export function todayPage(){
             editField.remove();
 
             let todoDiv = document.createElement('div');
+            let todoDisplayDiv = document.createElement('div');
+            let todoDateDisplay = document.createElement('div')
+
             todoDiv.className = 'todo-div';
-            todoDiv.innerHTML = newToDo.header;
+            todoDisplayDiv.style.flex = '2';
+
+            if (newToDo.header.length!=0){
+                todoDisplayDiv.innerHTML = newToDo.header;
+            }
+            else {
+                todoDisplayDiv.innerHTML = '(Untitled)';
+            }
+            
+            todoDateDisplay.innerHTML = newToDo.dateCreated;
+
             displayPane.appendChild(todoDiv);
+            todoDiv.appendChild(todoDisplayDiv);
+            todoDiv.appendChild(todoDateDisplay);
 
             console.log(todoArray[0]);
 

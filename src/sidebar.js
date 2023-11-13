@@ -1,6 +1,6 @@
 import { todayPage } from "./today";
 
-export function dropdownFn(){
+export function sidebarFunctions(){
     let dropdownPath = document.getElementById('dropdownPath');
     let taskHeader = document.getElementById('task-header');
     let stickyBoardHeader = document.getElementById('sticky-board');

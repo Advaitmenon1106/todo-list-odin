@@ -142,4 +142,5 @@
     border-bottom: 1px solid silver;
     margin-top: 5%;
     max-width: 70vw;
+    display: flex;
 }

@@ -1,5 +1,5 @@
-import { dropdownFn } from "./dropdown";
+import { sidebarFunctions } from "./sidebar";
 
 document.addEventListener('DOMContentLoaded', () => {
-    dropdownFn();
+    sidebarFunctions();
 });
