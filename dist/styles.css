@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: 'Comic Neue', cursive, 'Times New Roman', Times, serif;
+}
+.all{
+    display: flex;
+}
+
+.sidebar{
+    flex:0.6;
+    border-radius: 15px;
+    margin: 1%;
+    min-width: 15vw;
+    background-color: rgb(235, 235, 235);
+    height: 96vh;
+    font-size: 25px;
+}
+
+.content{
+    flex: 2.2;
+    display: flex;
+    flex-direction: column;
+}
+
+.menuText{
+    margin-left: 5%;
+    margin-top: 3%;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+#searchBar{
+    background-color: inherit;
+    border: none;
+    /* border-bottom: 2px solid silver; */
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-top: 3%;
+    max-width: 18vw;
+    font-size: 20px;
+    padding: 1%;
+}
+
+#searchBar:focus{
+    outline: none;
+    border: 1px solid rgb(133, 132, 132);
+    color: rgb(133, 132, 132);
+    font-size: 20px;  
+    transition-duration: 0.5s; 
+}
+
+#task-header, #calendar{
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#calendar, .headers{
+    margin-left: 10%;
+    margin-top: 2%;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.taskMenu{
+    margin-left:15%;
+}
+
+#task-header{
+    margin-top:5%;
+}
+
+.task-list-hidden{
+    font-size: 18px;
+    display: none;
+}
+
+.task-list-show{
+    font-size: 18px;
+}
+
+#display{
+    margin-top: 3%;
+}
+
+.dropdown{
+    height: 2vw;
+    width: 2vw;
+}
+
+.dropdown:hover{
+    cursor: pointer;
+}
+
+#editField{
+    flex: 0.8;
+    background-color: rgb(235, 235, 235);
+    border-radius: 15px;
+    margin: 1%;
+    min-width: 30vw;
+    position: relative;
+}
+
+#title-field, #content-field{
+    background-color: inherit;
+    outline: none;
+    margin: 5%;
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+#title-field{
+    font-size: 30px;
+}
+
+#content-field{
+    font-size: 20px;
+    min-width: 500px;
+    min-height: 350px;
+}
+
+#submit-button{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 25px;
+    padding: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: gold;
+    outline: none;
+    border: none;
+}
+
+.todo-div{
+    font-size: 30px;
+    border-bottom: 1px solid silver;
+    margin-top: 5%;
+    max-width: 70vw;
+}
