@@ -14,7 +14,7 @@
     margin: 1%;
     min-width: 15vw;
     background-color: rgb(235, 235, 235);
-    height: 96vh;
+    min-height: 100vh;
     font-size: 25px;
 }
 
@@ -120,7 +120,7 @@
 
 #content-field{
     font-size: 20px;
-    min-width: 500px;
+    min-width: 450px;
     min-height: 350px;
 }
 

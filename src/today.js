@@ -2,10 +2,19 @@ import { format } from "date-fns";
 import { ToDo } from "./todo";
 
 export function todayPage(){
+
     let displayPane = document.getElementById('display');
-    displayPane.innerHTML = '';
     let all = document.getElementsByClassName('all')[0];
-    let todoArray = [];
+    let todoArray;
+    
+    if (localStorage.getItem('todoArray')!=null) {
+        todoArray = JSON.parse(localStorage.getItem('todoArray'));
+    }
+    else{
+        todoArray = [];
+    }
+
+    let taskList = document.getElementById('taskList');
 
     let addNewTodo= document.createElement('div');
     let header = document.createElement('div');
@@ -13,7 +22,7 @@ export function todayPage(){
 
     editField.id = 'editField';
 
-    header.innerHTML = 'Tasks for today'
+    header.innerHTML = 'Tasks for today';
     addNewTodo.innerHTML = 'Add a new Task';
 
 
@@ -68,13 +77,14 @@ export function todayPage(){
 
         submit.addEventListener('click', ()=>{
             let newToDo = new ToDo(title.value, format(new Date(), 'dd-MM-yyyy hh:mm'));
-
             todoArray.push(newToDo);
+            localStorage.setItem('todoArray', JSON.stringify(todoArray));
+            
             editField.remove();
 
             let todoDiv = document.createElement('div');
             let todoDisplayDiv = document.createElement('div');
-            let todoDateDisplay = document.createElement('div')
+            let todoDateDisplay = document.createElement('div');
 
             todoDiv.className = 'todo-div';
             todoDisplayDiv.style.flex = '2';
@@ -92,7 +102,17 @@ export function todayPage(){
             todoDiv.appendChild(todoDisplayDiv);
             todoDiv.appendChild(todoDateDisplay);
 
-            console.log(todoArray[0]);
+            let taskMenu = document.createElement('div');
+            
+            if (newToDo.header.length!=0){
+                taskMenu.innerHTML = newToDo.header;
+            }
+            else {
+                taskMenu.innerHTML = '(Untitled)';
+            }
+            
+            taskMenu.className = 'taskMenu';
+            taskList.appendChild(taskMenu);
 
         })
     })

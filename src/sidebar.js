@@ -1,4 +1,5 @@
 import { todayPage } from "./today";
+import { renderExistingRecords } from "./renderExistingTodos";
 
 export function sidebarFunctions(){
     let dropdownPath = document.getElementById('dropdownPath');
@@ -21,6 +22,8 @@ export function sidebarFunctions(){
             taskList.className = 'task-list-hidden';
             dropdownPath.setAttribute('d', 'M10,17L15,12L10,7V17Z');
         }
+
+        renderExistingRecords();
     })
 
     stickyBoardHeader.addEventListener('click', ()=>{
